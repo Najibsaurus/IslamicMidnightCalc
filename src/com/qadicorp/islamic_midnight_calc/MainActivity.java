@@ -33,7 +33,7 @@ public class MainActivity extends Activity implements OnTimeChangedListener {
         GregorianCalendar from = new GregorianCalendar(1, Calendar.JANUARY, 1, this.fromTime.getCurrentHour(), this.fromTime.getCurrentMinute());
         GregorianCalendar to = new GregorianCalendar(1, Calendar.JANUARY, 2, this.toTime.getCurrentHour(), this.toTime.getCurrentMinute());
 
-        long midPointInMillis = from.getTimeInMillis() - to.getTimeInMillis();
+        long midPointInMillis = (to.getTimeInMillis() - from.getTimeInMillis())/2;
 
         GregorianCalendar mid = (GregorianCalendar) from.clone();
         mid.add(Calendar.MILLISECOND, (int) midPointInMillis);
